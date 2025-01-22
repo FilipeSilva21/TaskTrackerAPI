@@ -31,7 +31,7 @@ public class Task {
     public Task() {
     }
 
-    public Task(Long taskId, String name, String description, Boolean isDone) {
+    public Task(Long taskId, String name, String description, Boolean isDone, User user) {
         this.taskId = taskId;
         this.name = name;
         this.description = description;
