@@ -2,7 +2,6 @@ package com.taskTrackerAPI.services;
 
 import com.taskTrackerAPI.DTOs.CreateTaskDTO;
 import com.taskTrackerAPI.DTOs.UpdateTaskDTO;
-import com.taskTrackerAPI.DTOs.UpdateUserDTO;
 import com.taskTrackerAPI.entities.Task;
 import com.taskTrackerAPI.entities.User;
 import com.taskTrackerAPI.repositories.TaskRepository;

@@ -13,26 +13,28 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.util.List;
 
+@RestController
+@RequestMapping("/v1/tasks")
 public class TaskController {
 
     @Autowired
     private TaskService taskService;
 
-    @PostMapping
+    @PostMapping(("/{userId}/tasks"))
     public ResponseEntity<Task> createTask(@RequestBody CreateTaskDTO createTaskDTO,
-                                             @PathVariable User user){
+                                             @PathVariable User userId){
 
-        var taskId = taskService.createTask(createTaskDTO, user);
+        var taskId = taskService.createTask(createTaskDTO, userId);
 
         return ResponseEntity.created(URI.create("/v1/tasks/" + taskId)).build();
     }
 
-    @GetMapping
-    public ResponseEntity<List<Task>> listTasks() {
+    @GetMapping("/{userId}/tasks")
+    public ResponseEntity<List<Task>> listTasks(@PathVariable("userId") Long userId) {
 
         var tasks = taskService.listTasks();
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(tasks);
     }
 
     @GetMapping("/{taskId}")

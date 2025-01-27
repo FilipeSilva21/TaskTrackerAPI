@@ -10,6 +10,8 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "tbUsers")
 public class User {

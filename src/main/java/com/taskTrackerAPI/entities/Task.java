@@ -34,6 +34,7 @@ public class Task {
         this.name = name;
         this.description = description;
         this.isDone = isDone;
+        this.user = user;
     }
 
     public Long getTaskId() {
