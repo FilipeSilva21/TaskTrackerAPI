@@ -8,10 +8,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "tbUsers")
 public class User {
@@ -42,15 +41,6 @@ public class User {
     public User() {
     }
 
-    public User(Long userId, String name, String email, String password, Instant creationTimestamp, Instant updateTimestamp) {
-        this.userId = userId;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.creationTimestamp = creationTimestamp;
-        this.updateTimestamp = updateTimestamp;
-    }
-
     public Long getUserId() {
         return userId;
     }
@@ -73,10 +63,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public void setPassword(String password) {
@@ -105,5 +91,14 @@ public class User {
 
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public User(Long userId, String name, String email, String password, Instant creationTimestamp, Instant updateTimestamp) {
+        this.userId = userId;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.creationTimestamp = creationTimestamp;
+        this.updateTimestamp = updateTimestamp;
     }
 }

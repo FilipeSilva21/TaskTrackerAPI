@@ -1,5 +1,7 @@
 package com.taskTrackerAPI.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +26,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "userId")
+    @JsonIgnoreProperties("tasks")
     public User user;
 
     public Task() {
